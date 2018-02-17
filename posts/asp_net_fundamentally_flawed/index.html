@@ -41,26 +41,26 @@
               <div class='post'>
                 <h2 class='post-title'><a href='http://www.flattland.com/posts/asp_net_fundamentally_flawed'>ASP.NET Fundamentally Flawed</a></h2>
                 <p class='post-info'><span class='posted-on'>2008-02-14 13:21</span></p>
-                <div class='post-content'><p>This won't be news to most people who work with ASP.NET, but after a few days of frustration I had to write about it.</p>
+                <div class='post-content'><p>This won’t be news to most people who work with ASP.NET, but after a few days of frustration I had to write about it.</p>
 <p>ASP.NET is fundamentally flawed. The flaw is in using form POST to do all of the work. Take, for example, the GridView control.</p>
-<ol>
+<ol type="1">
 <li>Create new web project, open the Default.aspx page designer.</li>
 <li>Add a SqlDataSource that will return more than twenty records and a few sortable columns.</li>
 <li>Add a GridView and set its DataSource to the SqlDataSource. Enable Paging and Sorting.</li>
 <li>Run the page.</li>
 <li>Sort on a column</li>
 <li>Choose a different page of data.</li>
-<li>Click the browser's Back button.</li>
+<li>Click the browser’s Back button.</li>
 </ol>
-<p>You'll receive a warning message about resending POST data. This shouldn't happen. I've done nothing to update data on the server. All I've done is request data.</p>
-<p>Here's another example. What if I create a page with a Search text box and a Find button? Upon clicking Find, I'll display results on the same page so the user can search again. If I do as Microsoft intends, I'll add code to the button's Click event and update something like a repeater control. And then, if I browser Back, I get the warning message again.</p>
-<p>In both of the above cases, a GET request should be used. POST is used when the user's request is to change data. For instance, when submitting registration information.</p>
-<p>But ASP.NET by design puts all actions into a <em>single form POST</em>. It uses forms to store all state data. You <em>can</em> construct code that performs GET, but that isn't how things work by design.</p>
-<p>Microsoft adds an attribute called "runat" to any control, whether its own or the standard html tags. <code>&lt;asp:Textbox Id="txtName" runat="server"&gt;&lt;input type="text" id="txtName" runat="server"&gt;</code></p>
-<p>When runat = "server", three things become true. First, from a programmer's point of view, the control essentially becomes a variable that you manipulate from code. The variable's value (such as a text box's text), is eventually sent to the browser as the response.</p>
+<p>You’ll receive a warning message about resending POST data. This shouldn’t happen. I’ve done nothing to update data on the server. All I’ve done is request data.</p>
+<p>Here’s another example. What if I create a page with a Search text box and a Find button? Upon clicking Find, I’ll display results on the same page so the user can search again. If I do as Microsoft intends, I’ll add code to the button’s Click event and update something like a repeater control. And then, if I browser Back, I get the warning message again.</p>
+<p>In both of the above cases, a GET request should be used. POST is used when the user’s request is to change data. For instance, when submitting registration information.</p>
+<p>But ASP.NET by design puts all actions into a <em>single form POST</em>. It uses forms to store all state data. You <em>can</em> construct code that performs GET, but that isn’t how things work by design.</p>
+<p>Microsoft adds an attribute called “runat” to any control, whether its own or the standard html tags. <code>&lt;asp:Textbox Id="txtName" runat="server"&gt;&lt;input type="text" id="txtName" runat="server"&gt;</code></p>
+<p>When runat = “server”, three things become true. First, from a programmer’s point of view, the control essentially becomes a variable that you manipulate from code. The variable’s value (such as a text box’s text), is eventually sent to the browser as the response.</p>
 <p>Second, on the server, ASP.NET will rename the id property of every control, for use in the view state. This means you cannot use css or javascript in the standard way.</p>
-<p>Third, the control's contents are stored in a hashed form in a page &lt;input&gt; variable. This means that the form's <em>entire</em> state is stored in the page. Why not? Why not store state on the page so it can be returned each time?</p>
-<p>The reason is that you must choose whether to return that state as part of a GET or POST. A GET will pass the state in the URL as a query string, which has limited allowed length. The advantage is a GET doesn't trigger a warning on browser Back. A POST doesn't have a length limit, but has the warning. Microsoft chose POST.</p>
+<p>Third, the control’s contents are stored in a hashed form in a page &lt;input&gt; variable. This means that the form’s <em>entire</em> state is stored in the page. Why not? Why not store state on the page so it can be returned each time?</p>
+<p>The reason is that you must choose whether to return that state as part of a GET or POST. A GET will pass the state in the URL as a query string, which has limited allowed length. The advantage is a GET doesn’t trigger a warning on browser Back. A POST doesn’t have a length limit, but has the warning. Microsoft chose POST.</p>
 <p>Microsoft has attempted to make http an event-driven protocol. This is fundamentally <em>not</em> the way the web works. The problems with misusing form POST are indicative of their flawed approach.</p>
 </div>
               </div>

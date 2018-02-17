@@ -41,14 +41,14 @@
               <div class='post'>
                 <h2 class='post-title'><a href='http://www.flattland.com/posts/asp_net_hangs_with_kaspersky'>ASP.NET Hangs With Kaspersky</a></h2>
                 <p class='post-info'><span class='posted-on'>2008-04-07 17:56</span></p>
-                <div class='post-content'><p>No, that's not vernacular. ASP.NET isn't spending time in a relaxed setting with Kaspersky Anti-Virus.</p>
-<p>I've been having trouble for a long time with my ASP.NET web pages hanging during load. I could click a button and the page would load fine, click the same button and the page would hang. If I ran in debug mode and set a breakpoint, the page would usually behave fine. If I removed the breakpoint, the page would probably start hanging again. There didn't seem to be a pattern.</p>
+                <div class='post-content'><p>No, that’s not vernacular. ASP.NET isn’t spending time in a relaxed setting with Kaspersky Anti-Virus.</p>
+<p>I’ve been having trouble for a long time with my ASP.NET web pages hanging during load. I could click a button and the page would load fine, click the same button and the page would hang. If I ran in debug mode and set a breakpoint, the page would usually behave fine. If I removed the breakpoint, the page would probably start hanging again. There didn’t seem to be a pattern.</p>
 <p>Finally, today, I was trying to find a solution when I came across this page.</p>
 <p><a href="http://blogs.msdn.com/tess/archive/2007/08/13/asp-net-hang-case-study-application-hangs-on-startup.aspx">ASP.NET Hang Case Study: Application hangs on startup</a></p>
-<p>The almost-casual reference to problems with anti-virus programs is what got my attention. I disabled Kaspersky and, ta-da, the problem went away. After some more digging, I cleaned up the Threats and Exclusions Trusted Zone settings. Specifically, I removed everything (there were only four exclusions), then added an application exclusion for Visual Studio 2005 Web Developer Express with two rules: "Do not scan open files", and "Do not scan...network traffic."</p>
-<p>I was fooled by an earlier behavior into thinking everything was OK with Kaspersky's settings. When first running VWD in debug mode, it starts its own web browser instance. This causes Kaspersky to generate a warning about an "Invader"...that makes sense to me. I said to add the process to the trusted zone. But it appears that's not enough. As found, above, it's better to explicitly add the program to the trusted zone.</p>
-<p>I'm not slamming Kaspersky at all--I think it's a great program. I can't say I understand--except in concept--how Kaspersky is causing the hang to occur. But I'm glad it's stopped.</p>
-<p><em>Or has it? I'll keep you posted.</em></p>
+<p>The almost-casual reference to problems with anti-virus programs is what got my attention. I disabled Kaspersky and, ta-da, the problem went away. After some more digging, I cleaned up the Threats and Exclusions Trusted Zone settings. Specifically, I removed everything (there were only four exclusions), then added an application exclusion for Visual Studio 2005 Web Developer Express with two rules: “Do not scan open files”, and “Do not scan…network traffic.”</p>
+<p>I was fooled by an earlier behavior into thinking everything was OK with Kaspersky’s settings. When first running VWD in debug mode, it starts its own web browser instance. This causes Kaspersky to generate a warning about an “Invader”…that makes sense to me. I said to add the process to the trusted zone. But it appears that’s not enough. As found, above, it’s better to explicitly add the program to the trusted zone.</p>
+<p>I’m not slamming Kaspersky at all–I think it’s a great program. I can’t say I understand–except in concept–how Kaspersky is causing the hang to occur. But I’m glad it’s stopped.</p>
+<p><em>Or has it? I’ll keep you posted.</em></p>
 </div>
               </div>
               

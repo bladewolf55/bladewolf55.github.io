@@ -46,15 +46,15 @@
               <div class='post'>
                 <h2 class='post-title'><a href='http://www.flattland.com/posts/xunit_net_and_mvc_datacontext_error'>xUnit.Net and MVC DataContext error</a></h2>
                 <p class='post-info'><span class='posted-on'>2009-02-09 14:27</span></p>
-                <div class='post-content'><p>Like others, I'm going to use my web log as a pseudo knowledge base.</p>
-<p>I ran into an error using xUnit.Net against an ASP.NET MVC project. When trying to get an instance of the DataContext, I'd get an "object reference not found" error.</p>
+                <div class='post-content'><p>Like others, I’m going to use my web log as a pseudo knowledge base.</p>
+<p>I ran into an error using xUnit.Net against an ASP.NET MVC project. When trying to get an instance of the DataContext, I’d get an “object reference not found” error.</p>
 <p>[Fact] public void InitDb() { AdventureWorksDataContext db = new AdventureWorksDataContext(); }</p>
 <blockquote>
-<p>Error 1 TestCase 'AdventureWorks.Tests.Controllers.HomeControllerFacts+Index.InitDb' failed: System.NullReferenceException : Object reference not set to an instance of an object. at AdventureWorks.AdventureWorksDataContext..ctor() in C:\Users\charles.flatt\Documents\Projects and Apps\App - AdventureWorks\src\AdventureWorks\Models\AdventureWorks.designer.cs:line 62</p>
+<p>Error 1 TestCase ‘AdventureWorks.Tests.Controllers.HomeControllerFacts+Index.InitDb’ failed: System.NullReferenceException : Object reference not set to an instance of an object. at AdventureWorks.AdventureWorksDataContext..ctor() in C:\Users\charles.flatt\Documents\Projects and Apps\App - AdventureWorks\src\AdventureWorks\Models\AdventureWorks.designer.cs:line 62</p>
 </blockquote>
-<p>I assumed, ignorantly, that the DataContext would instantiate using the web project's web.config, and thus the connection string. But the test dll uses its own app.config file and connection strings. On reflection, this makes perfect sense, and is very useful since I can easily test against a different database. The only requirement is to name the connection string the same in the test project's app.config, as the web project's web.config.</p>
+<p>I assumed, ignorantly, that the DataContext would instantiate using the web project’s web.config, and thus the connection string. But the test dll uses its own app.config file and connection strings. On reflection, this makes perfect sense, and is very useful since I can easily test against a different database. The only requirement is to name the connection string the same in the test project’s app.config, as the web project’s web.config.</p>
 <blockquote>
-<p>&lt;add name="AdventureWorks_DevConnectionString" connectionString="Data Source=localhost;Initial Catalog=AdventureWorks_Dev;Integrated Security=True" providerName="System.Data.SqlClient" /&gt; &lt;/connectionStrings&gt;</p>
+<p>&lt;add name=“AdventureWorks_DevConnectionString” connectionString=“Data Source=localhost;Initial Catalog=AdventureWorks_Dev;Integrated Security=True” providerName=“System.Data.SqlClient” /&gt; &lt;/connectionStrings&gt;</p>
 </blockquote>
 </div>
               </div>
@@ -63,8 +63,8 @@
               <div class='post'>
                 <h2 class='post-title'><a href='http://www.flattland.com/posts/robotic_extensions'>Robotic Extensions</a></h2>
                 <p class='post-info'><span class='posted-on'>2009-01-14 03:35</span></p>
-                <div class='post-content'><p>Here's an article title sure to make you wonder.</p>
-<p><a href="http://www.engadget.com/2009/01/13/new-robotic-exoskeleton-aims-to-help-farmers-combat-age-mutant/">New Robotic Exoskeleton Aims to Help Farmers Combat Age, Mutant Plants </a></p>
+                <div class='post-content'><p>Here’s an article title sure to make you wonder.</p>
+<p><a href="http://www.engadget.com/2009/01/13/new-robotic-exoskeleton-aims-to-help-farmers-combat-age-mutant/">New Robotic Exoskeleton Aims to Help Farmers Combat Age, Mutant Plants</a></p>
 </div>
               </div>
               
@@ -72,7 +72,7 @@
               <div class='post'>
                 <h2 class='post-title'><a href='http://www.flattland.com/posts/happiness_spirituality_religion'>Happiness, Spirituality, Religion</a></h2>
                 <p class='post-info'><span class='posted-on'>2009-01-10 14:41</span></p>
-                <div class='post-content'><p>Here's an interesting article and studies. I may comment on this in a future posting.</p>
+                <div class='post-content'><p>Here’s an interesting article and studies. I may comment on this in a future posting.</p>
 <p><a href="http://www.msnbc.msn.com/id/28579289/">Spirituality, not religion, makes kids happy</a></p>
 </div>
               </div>

@@ -41,7 +41,7 @@
               <div class='post'>
                 <h2 class='post-title'><a href='http://www.flattland.com/posts/answer_to_css_difficult_column_list_problem'>Answer to CSS Difficult Column List Problem</a></h2>
                 <p class='post-info'><span class='posted-on'>2007-11-21 02:15</span></p>
-                <div class='post-content'><p>It turns out not to have been so difficult. Here's the CSS:</p>
+                <div class='post-content'><p>It turns out not to have been so difficult. Here’s the CSS:</p>
 <pre><code>
 #left_col {
 float: left;
@@ -49,11 +49,10 @@ width: 250px;
 }
 #right_col {
 margin-left: 260px;
-}
-</code></pre>
-<p>The key is using "margin-left". I tried a bunch of other things, for instance positioning the right column relative to the left then setting its margin. All my other attempts lead to weird things like the right column's list items all being left aligned.</p>
-<p>CSS is frustrating because I'll swear I'm doing something that makes sense according to the standard, but it doesn't work.</p>
-<p>The biggest thing I learned--that's also fundamental, but I didn't know it--is that inline elements cannot have their width set. Only block elements can have a width.</p>
+}</code></pre>
+<p>The key is using “margin-left”. I tried a bunch of other things, for instance positioning the right column relative to the left then setting its margin. All my other attempts lead to weird things like the right column’s list items all being left aligned.</p>
+<p>CSS is frustrating because I’ll swear I’m doing something that makes sense according to the standard, but it doesn’t work.</p>
+<p>The biggest thing I learned–that’s also fundamental, but I didn’t know it–is that inline elements cannot have their width set. Only block elements can have a width.</p>
 <p>So what do you do when you want a fixed width inline element? Set its display attribute to block and float it left.</p>
 <p>Weird.</p>
 </div>

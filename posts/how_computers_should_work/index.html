@@ -41,18 +41,17 @@
               <div class='post'>
                 <h2 class='post-title'><a href='http://www.flattland.com/posts/how_computers_should_work'>How Computers Should Work</a></h2>
                 <p class='post-info'><span class='posted-on'>2009-04-27 22:18</span></p>
-                <div class='post-content'><p>Everyone gets that I'm cleaning up files, right? Here are some notes I made about how computers should work. I <em>don't</em> think this is operating system-specific.</p>
-<p>Windows is sort of moving in this direction, as is/has Linux. Mac might be pretty close--I'm not a Mac guy.</p>
-<p>This came about because I think it's ridiculously difficult to restore a computer. It really should be as easy as 1) reinstall operating system, 2) copy program folders, 3) copy user folder(s).</p>
-<p>Everything needed to run a program should be in a single directory, under a definitive top-level "programs" directory. The OS just searches this directory to display installed programs. The program's name, settings (per user) are all found in published ways. This is true even if the program is a service.</p>
-<ol>
+                <div class='post-content'><p>Everyone gets that I’m cleaning up files, right? Here are some notes I made about how computers should work. I <em>don’t</em> think this is operating system-specific.</p>
+<p>Windows is sort of moving in this direction, as is/has Linux. Mac might be pretty close–I’m not a Mac guy.</p>
+<p>This came about because I think it’s ridiculously difficult to restore a computer. It really should be as easy as 1) reinstall operating system, 2) copy program folders, 3) copy user folder(s).</p>
+<p>Everything needed to run a program should be in a single directory, under a definitive top-level “programs” directory. The OS just searches this directory to display installed programs. The program’s name, settings (per user) are all found in published ways. This is true even if the program is a service.</p>
+<ol type="1">
 <li><p>The reason to keep all user settings with the program is to make transferring/reinstallation easier.</p></li>
-<li><p>All of the program's licenses are kept with the program. If a program is transferred to a new machine, the program can contain a public/private key method of knowing this and prompting for the installation code.</p></li>
-<li></li>
+<li><p>All of the program’s licenses are kept with the program. If a program is transferred to a new machine, the program can contain a public/private key method of knowing this and prompting for the installation code.</p></li>
+<li><p>All user data should be under a single “data” directory, per user. The tricky part is preventing–or at least discouraging–users from storing data elsewhere. Each user’s data directory should have a Desktop folder, for example.</p></li>
 </ol>
-<p>All user data should be under a single "data" directory, per user. The tricky part is preventing--or at least discouraging--users from storing data elsewhere. Each user's data directory should have a Desktop folder, for example.</p>
 <p>In other words, there are three essentially separate areas that talk to each other: operating system, programs and user data.</p>
-<p>Notes ----- * It might be better if user-specific program settings are kept in the user's folder. Might make security easier.</p>
+<p>Notes -—- * It might be better if user-specific program settings are kept in the user’s folder. Might make security easier.</p>
 <p>* Windows sort of does this (user folders w/settings). But, they also keep settings in the registry, and in two user folders, and sometimes in INI files. Blech!</p>
 </div>
               </div>
