@@ -34,6 +34,7 @@ nav .icon {
     nav a.icon {
       float: right;
       display: block;
+      font-size: 200%;
     }
 
     nav.responsive {position: relative; background-color: black}
