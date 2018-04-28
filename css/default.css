@@ -124,7 +124,7 @@ ol.tree {
 /* header {margin: 0 50px 0 250px; height:150px} */
 #site-image {float:left;margin-right:20px; margin-top: -20px}
 #site-name {font-size: 250%;padding-top: 20px; height:45px;}
-#site-subtitle{font-size: 120%; font-style: italic; color: darkslategray;}
+#site-subtitle{font-size: 120%; font-style: italic; color: darkslategray;clear:left;}
 
 /* content section */
 /* section#content {margin: 0 4% 20px 4%;} */
