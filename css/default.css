@@ -20,12 +20,12 @@ table tr{ background-color: #fff; border-top: 1px solid #ccc; page-break-inside:
 /* Custom for Goat */
 a, 
 a:link, 
-a:visited {color: darkslategray; text-decoration: none; text-decoration-color: lightgray;}
+a:visited {color: darkslategray; text-decoration: underline dashed; text-decoration-color: lightgray;}
 
 a:hover {color: black;}
 
 /* nav */
-nav {font-family: "Open Sans"; padding: 0 20px 0 10px;}
+nav {font-family: "Open Sans"; font-size: 12pt; padding: 0 20px 0 10px;}
 nav h2 {text-decoration: none;}
 /* menu */
 #menu ol, #menu ul {list-style-type:none; margin: 0; padding: 0}
