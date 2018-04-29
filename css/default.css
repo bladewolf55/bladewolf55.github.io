@@ -20,7 +20,7 @@ table tr{ background-color: #fff; border-top: 1px solid #ccc; page-break-inside:
 /* Custom for Goat */
 a, 
 a:link, 
-a:visited {color: darkorange; text-decoration: none; text-decoration-color: lightgray;}
+a:visited {color: darkslategray; text-decoration: none; text-decoration-color: lightgray;}
 
 a:hover {color: black;}
 
