@@ -78,7 +78,7 @@
                 <h2 class='post-title'><a href='https://www.flattland.com/posts/xunit_net_and_mvc_datacontext_error'>xUnit.Net and MVC DataContext error</a></h2>
                 <p class='post-info'><span class='posted-on'>2009-02-09 14:27</span></p>
                 <div class='post-content'><p>Like others, I'm going to use my web log as a pseudo knowledge base.</p>
-<p>I ran into an error using xUnit.Net against an ASP.NET MVC project. When trying to get an instance of the DataContext, I'd get an "object reference not found" error.</p>
+<p>I ran into an error using xUnit.Net against an ASP.NET MVC project. When trying to get an instance of the DataContext, I'd get an &quot;object reference not found&quot; error.</p>
 <pre><code>[Fact]
 public void InitDb()
 {
@@ -86,14 +86,14 @@ public void InitDb()
 }
 </code></pre>
 <blockquote>
-<p>Error 1 TestCase 'AdventureWorks.Tests.Controllers.HomeControllerFacts+Index.InitDb'<br>
-failed: System.NullReferenceException : Object reference not set to an instance of an object.<br>
+<p>Error 1 TestCase 'AdventureWorks.Tests.Controllers.HomeControllerFacts+Index.InitDb'<br />
+failed: System.NullReferenceException : Object reference not set to an instance of an object.<br />
 at AdventureWorks.AdventureWorksDataContext..ctor() in C:\Users\charles.flatt\Documents\Projects and Apps\App - AdventureWorks\src\AdventureWorks\Models\AdventureWorks.designer.cs:line 62</p>
 </blockquote>
 <p>I assumed, ignorantly, that the DataContext would instantiate using the web project's web.config, and thus the connection string. But the test dll uses its own app.config file and connection strings. On reflection, this makes perfect sense, and is very useful since I can easily test against a different database. The only requirement is to name the connection string the same in the test project's app.config, as the web project's web.config.</p>
 <blockquote>
-<p>&lt;add name="AdventureWorks_DevConnectionString" connectionString="Data Source=localhost;Initial Catalog=AdventureWorks_Dev;Integrated Security=True"<br>
-providerName="System.Data.SqlClient" /&gt;<br>
+<p>&lt;add name=&quot;AdventureWorks_DevConnectionString&quot; connectionString=&quot;Data Source=localhost;Initial Catalog=AdventureWorks_Dev;Integrated Security=True&quot;<br />
+providerName=&quot;System.Data.SqlClient&quot; /&gt;<br />
 &lt;/connectionStrings&gt;</p>
 </blockquote>
 </div>

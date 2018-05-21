@@ -60,7 +60,7 @@
 <p><a href="http://www.songbirdnest.com/">Songbird</a></p>
 <p>I'm using version 0.2 Developer Preview regularly, and am happy with it. Reasonably stable. I don't need much, just an MP3 player, but I like the iTunes interface. With Songbird, I get the same interface, and other features if I want them. The mini-player is better than iTunes.</p>
 <p>If you try it, you'll notice it doesn't have the Genres panel. I filter by genre quite a bit, and found this can be added very simply by editing a particular file. Here are my notes:</p>
-<pre><code>Add "genre" to the array in the following function, as shown.
+<pre><code>Add &quot;genre&quot; to the array in the following function, as shown.
 The function is in 
 Program Files/Songbird/chrome/songbird.jar (open using Winzip)
 content/songird/xul/playlist_test.xul
@@ -71,9 +71,9 @@ content/songird/xul/playlist_test.xul
     try
     { 
       // Default values, in case we get confused
-      var table = "library";
-      var guid = "songbird";
-      var data = SBDataGetStringValue( "browser.uri" );
+      var table = &quot;library&quot;;
+      var guid = &quot;songbird&quot;;
+      var data = SBDataGetStringValue( &quot;browser.uri&quot; );
 
       // Cook the table from the magic browser uri?
       var qm = data.lastIndexOf( '?' );
@@ -96,12 +96,12 @@ content/songird/xul/playlist_test.xul
       {
         // If we're a library, we want metadata filters
         var filters = null;
-        if ( table == "library" )
+        if ( table == &quot;library&quot; )
         {
           filters = new Array(
-                                "genre",
-                                "artist",
-                                "album" 
+                                &quot;genre&quot;,
+                                &quot;artist&quot;,
+                                &quot;album&quot; 
                              );
         }
 </code></pre>

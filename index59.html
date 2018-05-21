@@ -60,15 +60,15 @@
               <div class='post'>
                 <h2 class='post-title'><a href='https://www.flattland.com/posts/another_microsoft_double_bind'>Another Microsoft Double Bind</a></h2>
                 <p class='post-info'><span class='posted-on'>2006-09-26 13:07</span></p>
-                <div class='post-content'><p>I came across this on a recent .NET web development project. The problem? How to pass variables from one form to another. In my case, I was landing on a page to create or edit a record. I needed the page to <em>sometimes</em> be passed a record id which it could load. Likewise, if I created a new record with this page and then reloaded the page, I needed to pass the new record's id. This is pretty common functionality and is handled in most server-side languages (standard ASP, PHP, etc.) with querystrings since they can be dynamically generated. ASP.NET isn't intended to use querystrings with form elements. In fact, if the form is set as runat=server, then .NET will ignore the querystring portion if you try to use it in the .aspx file, like this:<br>
-<code>&lt;form id="Form1" runat="server" action="=default.aspx?item_id&lt;%=itemID%&gt;"&gt;</code></p>
-<p>The above won't work. This is related to ASP.NET's goal of being an event driven model, just like developing Windows applications. At first I thought I'd be able to change the querystring via code-behind, but, again, that's not how things work, as shown in this article:<br>
+                <div class='post-content'><p>I came across this on a recent .NET web development project. The problem? How to pass variables from one form to another. In my case, I was landing on a page to create or edit a record. I needed the page to <em>sometimes</em> be passed a record id which it could load. Likewise, if I created a new record with this page and then reloaded the page, I needed to pass the new record's id. This is pretty common functionality and is handled in most server-side languages (standard ASP, PHP, etc.) with querystrings since they can be dynamically generated. ASP.NET isn't intended to use querystrings with form elements. In fact, if the form is set as runat=server, then .NET will ignore the querystring portion if you try to use it in the .aspx file, like this:<br />
+<code>&lt;form id=&quot;Form1&quot; runat=&quot;server&quot; action=&quot;=default.aspx?item_id&lt;%=itemID%&gt;&quot;&gt;</code></p>
+<p>The above won't work. This is related to ASP.NET's goal of being an event driven model, just like developing Windows applications. At first I thought I'd be able to change the querystring via code-behind, but, again, that's not how things work, as shown in this article:<br />
 <a href="http://support.microsoft.com/default.aspx?scid=kb%3Ben-us%3B810218">PRB: Cannot Change or Remove the QueryString Action for a Web Form on Postback</a></p>
-<p>Microsoft's recommended solution is to store the data you want the next page to access (even if it's the same page) as public properties of the page's code-behind class. Then, call the page using Server.Transfer. Since this method passes control from one page to another without a round trip to the browser, the second page can still access data on the first page.<br>
+<p>Microsoft's recommended solution is to store the data you want the next page to access (even if it's the same page) as public properties of the page's code-behind class. Then, call the page using Server.Transfer. Since this method passes control from one page to another without a round trip to the browser, the second page can still access data on the first page.<br />
 <a href="http://www.codeproject.com/aspnet/DataPassingBtPages.asp">Passing information between pages - The .NET way</a></p>
-<p>So, what am I complaining about? Well, first, this isn't the best technique in the world. For one thing, the receiving page has to have explicit knowledge of the calling page. But the real problem was when I got errors using Server.Transfer. Here's the KB article.<br>
-<a href="http://support.microsoft.com/kb/320439/EN-US/">PRB: "Error Executing Child Request" Error Message When You Use Server.Transfer or Server.Execute in ASP.NET Page</a></p>
-<p>Notice the workaround? "Use Response.Redirect." Which means a server round trip. Which means no access to the previous form's variables.</p>
+<p>So, what am I complaining about? Well, first, this isn't the best technique in the world. For one thing, the receiving page has to have explicit knowledge of the calling page. But the real problem was when I got errors using Server.Transfer. Here's the KB article.<br />
+<a href="http://support.microsoft.com/kb/320439/EN-US/">PRB: &quot;Error Executing Child Request&quot; Error Message When You Use Server.Transfer or Server.Execute in ASP.NET Page</a></p>
+<p>Notice the workaround? &quot;Use Response.Redirect.&quot; Which means a server round trip. Which means no access to the previous form's variables.</p>
 <p>So, I'm back to square one. :-)</p>
 <p>Now, I suppose I could have figured out why the error was occurring and fixed it, but who has time when you're given a few days to go live by crazy clients? (You know who you are.) So, I did the blechy, ucky soup of the nightmarish coding soul thing. I put the data into session variables. It wasn't much, and got the job done.</p>
 <p>(note1: I think that .NET 2.0 and Visual Studio .NET 2005 can dynamically change a form's query string. Not sure.)</p>
@@ -83,16 +83,16 @@
                 <div class='post-content'><p>I really like film noir, and pulp writing from the 1930s-40s. As some of you know, I've been working my way through the 181 <a href="http://en.wikipedia.org/wiki/Doc_Savage">Doc Savage</a> pulps, written from 1933-1948. So, it's great to see a film that mirrors that style.</p>
 <p><a href="http://imdb.com/title/tt0036775/">Double Indemnity (1944)</a> stars the deliciously seductive <a href="http://imdb.com/name/nm0001766/">Barbara Stanwyck</a>, the decidedly not <em>My Three Sons</em> <a href="http://imdb.com/name/nm0534045/">Fred MacMurray</a>, and the iconic powerhouse <a href="http://imdb.com/name/nm0000064/">Edward G. Robinson</a>. The script was cowritten by director <a href="http://imdb.com/name/nm0000697/">Billy Wilder</a> and mystery writer giant <a href="http://imdb.com/name/nm0151452/">Raymond Chandler</a>. Chandler apparently hated working with Wilder and writing this screenplay. Thankfully, the result is giddy streams of dialogue that I'm convinced almost no one can perform today. I say this because some very fine actors tried recently in the movie <a href="http://imdb.com/title/tt0401792/">Sin City</a>. <a href="http://imdb.com/name/nm0000514/">Michael Madsen</a> did about the best.</p>
 <p>So what about the story? Take deceipt, betrayal, murder, love, lust, intelligence, cleverness. Add shadowy atmosphere, a superb score by <a href="http://imdb.com/name/nm0000067/">Miklos Rozsa</a>. Costumes by the famous <a href="http://imdb.com/name/nm0372128/">Edith Head</a>. Top it off with a sprinter's pacing. You get your two hours' worth with this one, baby.</p>
-<p>Barbara Stanwyck. The blonde wig removes some of her beauty (Billy Wilder didn't realize his mistake in having her wear it until well into filming), but for those of us who mostly remember her from <em>The Big Valley</em>, it's great to see her playing the vixen.<br>
-<img src="https://www.flattland.com/posts/film__double_indemnity/images/double_1.jpg" alt=""></p>
-<p>Edward G. Robinson. At 5'5", he was almost a foot shorter than Fred MacMurry. In their every scene together, you feel like Robinson could pick up MacMurry and throw him across the room.<br>
-<img src="https://www.flattland.com/posts/film__double_indemnity/images/double_2.jpg" alt=""></p>
-<p>Fred MacMurry, trying to stay composed.<br>
-<img src="https://www.flattland.com/posts/film__double_indemnity/images/double_3.jpg" alt=""></p>
-<p>And, Fred MacMurry, as the whole thing starts coming apart.<br>
-<img src="https://www.flattland.com/posts/film__double_indemnity/images/double_4.jpg" alt=""></p>
-<p>Barbara Stanwyck, lovely, dangerous.<br>
-<img src="https://www.flattland.com/posts/film__double_indemnity/images/double_5.jpg" alt=""></p>
+<p>Barbara Stanwyck. The blonde wig removes some of her beauty (Billy Wilder didn't realize his mistake in having her wear it until well into filming), but for those of us who mostly remember her from <em>The Big Valley</em>, it's great to see her playing the vixen.<br />
+<img src="images/double_1.jpg" alt="" /></p>
+<p>Edward G. Robinson. At 5'5&quot;, he was almost a foot shorter than Fred MacMurry. In their every scene together, you feel like Robinson could pick up MacMurry and throw him across the room.<br />
+<img src="images/double_2.jpg" alt="" /></p>
+<p>Fred MacMurry, trying to stay composed.<br />
+<img src="images/double_3.jpg" alt="" /></p>
+<p>And, Fred MacMurry, as the whole thing starts coming apart.<br />
+<img src="images/double_4.jpg" alt="" /></p>
+<p>Barbara Stanwyck, lovely, dangerous.<br />
+<img src="images/double_5.jpg" alt="" /></p>
 </div>
               </div>
               
@@ -101,23 +101,23 @@
                 <h2 class='post-title'><a href='https://www.flattland.com/posts/parkour'>Parkour</a></h2>
                 <p class='post-info'><span class='posted-on'>2006-09-14 20:52</span></p>
                 <div class='post-content'><p>I'm not sure, now, how I came across this sport/exercise, but I've become temporarily obsessed. Here is some information about <em>parkour</em>, and links to other sites and videos.</p>
-<p><a href="http://en.wikipedia.org/wiki/Parkour">Parkour</a> was invented by David Belle, influenced in part by his father, who was a soldier, and also by the "Natural Method of Physical Culture" developed in the early 1900s by <a href="http://en.wikipedia.org/wiki/George_H%C3%A9bert">George H�bert.</a> The information on H�bert is very interesting--to me, as interesting as parkour.</p>
+<p><a href="http://en.wikipedia.org/wiki/Parkour">Parkour</a> was invented by David Belle, influenced in part by his father, who was a soldier, and also by the &quot;Natural Method of Physical Culture&quot; developed in the early 1900s by <a href="http://en.wikipedia.org/wiki/George_H%C3%A9bert">George H�bert.</a> The information on H�bert is very interesting--to me, as interesting as parkour.</p>
 <p>Parkour emphasises getting from point A to B by effeciently overcoming obstacles. Instead of walking around a fence, a <em>traceur</em> would vault it. Faced with a low wall, he would jump and scale it. Rolls are emphasized in order to reduce joint injury. There is a definite simian quality to the movements. At its best, parkour is fluid and strong. These fellows (and a few ladies) are in excellent condition.</p>
-<p>There are two branches of parkour. One is the "pure" form, which is my opinionated way of saying it's the form approved of by David Belle. Effeciency and elegence are emphasized, and extraneous movement avoided. If a motion isn't necessary to overcoming the obstacle, then it isn't parkour. The second branch was developed by Belle's friend S�bastian Foucan and is commonly called <em>free running</em>. In free running, obstacles are overcome, but style and art of movement are encouranged. Free running has more flips and other flashy techniques. While there's a wow factor to free running, I much prefer the simple grace of parkour. The most breathtaking element in parkour is the building leaps, and yet Belle doesn't treat them as overly important.</p>
+<p>There are two branches of parkour. One is the &quot;pure&quot; form, which is my opinionated way of saying it's the form approved of by David Belle. Effeciency and elegence are emphasized, and extraneous movement avoided. If a motion isn't necessary to overcoming the obstacle, then it isn't parkour. The second branch was developed by Belle's friend S�bastian Foucan and is commonly called <em>free running</em>. In free running, obstacles are overcome, but style and art of movement are encouranged. Free running has more flips and other flashy techniques. While there's a wow factor to free running, I much prefer the simple grace of parkour. The most breathtaking element in parkour is the building leaps, and yet Belle doesn't treat them as overly important.</p>
 <p>It's tough to find really good video, but here are some that I think properly reveal this interesting sport.</p>
-<p>I think this is the best video. It shows off parkour, and is one of the few videos to remark on the danger of the sport, including deaths. (It's also in german with subtitles)<br>
+<p>I think this is the best video. It shows off parkour, and is one of the few videos to remark on the danger of the sport, including deaths. (It's also in german with subtitles)<br />
 <a href="http://www.parkour-videos.com/videos/tv-report-pro7-focus-tv-12-05-2006">Parkour Pro7</a></p>
-<p>A commercial that featured David Belle, and brought attention to parkour.<br>
+<p>A commercial that featured David Belle, and brought attention to parkour.<br />
 <a href="http://youtube.com/watch?v=SAMAr8y-Vtw">Rush-Hour (BBC)</a></p>
-<p>A clip from the film Banlieue 13. Again, David Belle. (I could do without the scree-scree soundtrack.)<br>
+<p>A clip from the film Banlieue 13. Again, David Belle. (I could do without the scree-scree soundtrack.)<br />
 <a href="http://youtube.com/watch?v=G2_p8JJHRTA">B13</a></p>
-<p>Another german television special. No subtitles.<br>
+<p>Another german television special. No subtitles.<br />
 <a href="http://www.parkour-videos.com/videos/kabel1-tv-report-abenteuer-leben-29-05-2006">Parkour on kabel1</a></p>
-<p>Finally, a better view of parkour "training". This is nice, showing off lots of seemingly simple movements that are in fact difficult. For example, notice how Blane moves up and down the tree branches. also, check out the jumps from hand rails to hand rails. (And, sigh, why the harsh music for such a smooth sport?)<br>
+<p>Finally, a better view of parkour &quot;training&quot;. This is nice, showing off lots of seemingly simple movements that are in fact difficult. For example, notice how Blane moves up and down the tree branches. also, check out the jumps from hand rails to hand rails. (And, sigh, why the harsh music for such a smooth sport?)<br />
 <a href="http://www.parkour-videos.com/videos/blane-tt-22-04-2006-power-is-nothing-without-control">Blane - Power is Nothing Without Control</a></p>
-<p>Near the bottom of this page is a list of videos that are supposed to represent good parkour.<br>
+<p>Near the bottom of this page is a list of videos that are supposed to represent good parkour.<br />
 <a href="http://parkour.net/parkour/news/">Parkour News</a></p>
-<p><img src="http://parkour.net/parkour/photos/albums/userpics/12067/speedvault2.jpg" alt=""></p>
+<p><img src="http://parkour.net/parkour/photos/albums/userpics/12067/speedvault2.jpg" alt="" /></p>
 </div>
               </div>
                <div class='paging'><a href='index58.html'>Newer</a>&nbsp;&nbsp;&nbsp;<a href='index60.html'>Older</a></div>

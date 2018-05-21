@@ -63,16 +63,16 @@
                 <div class='post-content'><p>Let's start this entry about <a href="http://imdb.com/title/tt0053125/">North by Northwest (1959)</a> by giving credit where it's due. <a href="http://imdb.com/name/nm0002136/">Bernard Herrmann</a>, who wrote the film score, was a damn genius.</p>
 <p>There's plenty else to say, such as how easily I was sucked into the plot, how brilliant the performances are from <a href="http://imdb.com/name/nm0000026/">Cary Grant</a> (every man wants to be Cary Grant), <a href="http://imdb.com/name/nm0001693/">Eva Marie Saint</a> (whew! my heart was on fire!), <a href="http://imdb.com/name/nm0000051/">James Mason</a> (so calmly <em>evil</em>), and <a href="http://imdb.com/name/nm0001445/">Martin Landau</a> (the very definition of wolfish), how absolutely cool <a href="http://imdb.com/name/nm0000033/">Alfred Hitchcock's</a> directing is.</p>
 <p>The story of mistaken identity, the plot of double crosses, the scenes where apparently nothing is happening, and yet...everything is happening. All this adds up to a great movie.</p>
-<p>One of many geometric shots in the film. Beautiful.<br>
-<img src="https://www.flattland.com/posts/film__north_by_northwest/images/north_northwest_1.jpg" alt=""></p>
-<p>Eva Marie Saint. Sexy, suave, sultry. Sigh.<br>
-<img src="https://www.flattland.com/posts/film__north_by_northwest/images/north_northwest_2.jpg" alt=""></p>
-<p>Cary Grant. Effortless excellence.<br>
-<img src="https://www.flattland.com/posts/film__north_by_northwest/images/north_northwest_3.jpg" alt=""></p>
-<p>Cary Grant, James Mason, Eva Marie Saint, and Martin Landau<br>
-<img src="https://www.flattland.com/posts/film__north_by_northwest/images/north_northwest_4.jpg" alt=""></p>
-<p>The famous, amazing Mt. Rushmore set. Not only is this set amazing for its apparent massiveness, but check out the actual size it must have been. In the foreground are Grant and Saint. In the background lower right is Landau.<br>
-<img src="https://www.flattland.com/posts/film__north_by_northwest/images/north_northwest_5.jpg" alt=""></p>
+<p>One of many geometric shots in the film. Beautiful.<br />
+<img src="images/north_northwest_1.jpg" alt="" /></p>
+<p>Eva Marie Saint. Sexy, suave, sultry. Sigh.<br />
+<img src="images/north_northwest_2.jpg" alt="" /></p>
+<p>Cary Grant. Effortless excellence.<br />
+<img src="images/north_northwest_3.jpg" alt="" /></p>
+<p>Cary Grant, James Mason, Eva Marie Saint, and Martin Landau<br />
+<img src="images/north_northwest_4.jpg" alt="" /></p>
+<p>The famous, amazing Mt. Rushmore set. Not only is this set amazing for its apparent massiveness, but check out the actual size it must have been. In the foreground are Grant and Saint. In the background lower right is Landau.<br />
+<img src="images/north_northwest_5.jpg" alt="" /></p>
 </div>
               </div>
               
@@ -81,11 +81,11 @@
                 <h2 class='post-title'><a href='https://www.flattland.com/posts/whats_that_date'>What&#039;s That Date?</a></h2>
                 <p class='post-info'><span class='posted-on'>2006-11-11 13:34</span></p>
                 <div class='post-content'><p>I just got fooled. I was looking at file dates in a directory list and saw this:</p>
-<p>file1.txt 1/15/2006<br>
-file2.txt 1/15/2006<br>
-file3.txt 1/15/2006<br>
-file4.txt 11/5/2006<br>
-file5.txt 1/15/2006<br>
+<p>file1.txt 1/15/2006<br />
+file2.txt 1/15/2006<br />
+file3.txt 1/15/2006<br />
+file4.txt 11/5/2006<br />
+file5.txt 1/15/2006<br />
 file6.txt 1/15/2006</p>
 <p>I couldn't understand why file4 hadn't changed in ten months. Then I looked more closely.</p>
 </div>
@@ -99,7 +99,7 @@ file6.txt 1/15/2006</p>
 <p><a href="http://www.songbirdnest.com/">Songbird</a></p>
 <p>I'm using version 0.2 Developer Preview regularly, and am happy with it. Reasonably stable. I don't need much, just an MP3 player, but I like the iTunes interface. With Songbird, I get the same interface, and other features if I want them. The mini-player is better than iTunes.</p>
 <p>If you try it, you'll notice it doesn't have the Genres panel. I filter by genre quite a bit, and found this can be added very simply by editing a particular file. Here are my notes:</p>
-<pre><code>Add "genre" to the array in the following function, as shown.
+<pre><code>Add &quot;genre&quot; to the array in the following function, as shown.
 The function is in 
 Program Files/Songbird/chrome/songbird.jar (open using Winzip)
 content/songird/xul/playlist_test.xul
@@ -110,9 +110,9 @@ content/songird/xul/playlist_test.xul
     try
     { 
       // Default values, in case we get confused
-      var table = "library";
-      var guid = "songbird";
-      var data = SBDataGetStringValue( "browser.uri" );
+      var table = &quot;library&quot;;
+      var guid = &quot;songbird&quot;;
+      var data = SBDataGetStringValue( &quot;browser.uri&quot; );
 
       // Cook the table from the magic browser uri?
       var qm = data.lastIndexOf( '?' );
@@ -135,12 +135,12 @@ content/songird/xul/playlist_test.xul
       {
         // If we're a library, we want metadata filters
         var filters = null;
-        if ( table == "library" )
+        if ( table == &quot;library&quot; )
         {
           filters = new Array(
-                                "genre",
-                                "artist",
-                                "album" 
+                                &quot;genre&quot;,
+                                &quot;artist&quot;,
+                                &quot;album&quot; 
                              );
         }
 </code></pre>

@@ -60,8 +60,8 @@
               <div class='post'>
                 <h2 class='post-title'><a href='https://www.flattland.com/posts/mac_os_x_leopoard__spotty___vista_hazy'>Mac OS X Leopoard: Spotty?  Vista Hazy?</a></h2>
                 <p class='post-info'><span class='posted-on'>2007-11-29 13:20</span></p>
-                <div class='post-content'><p>Here are two articles about Apple's latest OS X operating system version, "Leopard". The first has some pretty strong complaints, the second is more complimentary.</p>
-<p><a href="http://www.pcmag.com/article2/0,2704,2223921,00.asp">http://www.pcmag.com/article2/0,2704,2223921,00.asp</a><br>
+                <div class='post-content'><p>Here are two articles about Apple's latest OS X operating system version, &quot;Leopard&quot;. The first has some pretty strong complaints, the second is more complimentary.</p>
+<p><a href="http://www.pcmag.com/article2/0,2704,2223921,00.asp">http://www.pcmag.com/article2/0,2704,2223921,00.asp</a><br />
 <a href="http://www.pcmag.com/article2/0,2704,2207556,00.asp">http://www.pcmag.com/article2/0,2704,2207556,00.asp</a></p>
 <p>What I appreciate about the first article is that he's moving <em>back</em> to Tiger because it's more stable and easier to use.</p>
 <p>For the record, I don't use a Mac--yet--, and refuse to use Windows Vista. There's no good business reason to do so. My Windows XP installation is working fine, and I plan to buy my next computer before July so that I can get it with XP preinstalled, or just buy a copy of XP and wait on the computer.</p>
@@ -83,7 +83,7 @@
     margin-left: 260px;
   }
 </code></pre>
-<p>The key is using "margin-left". I tried a bunch of other things, for instance positioning the right column relative to the left then setting its margin. All my other attempts lead to weird things like the right column's list items all being left aligned.</p>
+<p>The key is using &quot;margin-left&quot;. I tried a bunch of other things, for instance positioning the right column relative to the left then setting its margin. All my other attempts lead to weird things like the right column's list items all being left aligned.</p>
 <p>CSS is frustrating because I'll swear I'm doing something that makes sense according to the standard, but it doesn't work.</p>
 <p>The biggest thing I learned--that's also fundamental, but I didn't know it--is that inline elements cannot have their width set. Only block elements can have a width.</p>
 <p>So what do you do when you want a fixed width inline element? Set its display attribute to block and float it left.</p>
@@ -96,14 +96,14 @@
                 <h2 class='post-title'><a href='https://www.flattland.com/posts/css_difficult_column_list_problem_why'>CSS Difficult Column List Problem Why?</a></h2>
                 <p class='post-info'><span class='posted-on'>2007-11-14 03:54</span></p>
                 <div class='post-content'><p>Given the following html, use CSS to put the two DIVs in side-by-side columns such that the ordered lists are identical and are properly indented.</p>
-<p>Browser compatibility requirements:<br>
-IE7<br>
-IE6<br>
-Firefox 2<br>
+<p>Browser compatibility requirements:<br />
+IE7<br />
+IE6<br />
+Firefox 2<br />
 Opera 9</p>
 <p>The DIV for column 1 is styled inline with a border to increase the difficulty. The second column's contents shouldn't appear within the first column.</p>
-<pre><code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+<pre><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+ &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Test&lt;/title&gt;
@@ -111,7 +111,7 @@ Opera 9</p>
     &lt;/style&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id="left_col" style="border: solid thin;"&gt;
+    &lt;div id=&quot;left_col&quot; style=&quot;border: solid thin;&quot;&gt;
       Ordered List
       &lt;ol&gt;
         &lt;li&gt;Item 1
@@ -127,7 +127,7 @@ Opera 9</p>
         &lt;li&gt;Item 2&lt;/li&gt;
       &lt;/ol&gt;
     &lt;/div&gt;
-    &lt;div id="right_col"&gt;
+    &lt;div id=&quot;right_col&quot;&gt;
       Ordered List
       &lt;ol&gt;
         &lt;li&gt;Item 1

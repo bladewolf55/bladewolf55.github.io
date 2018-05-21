@@ -57,17 +57,17 @@
                 <h2 class='post-title'><a href='https://www.flattland.com/posts/paypal_scam_url_-_impressive'>PayPal Scam URL - Impressive</a></h2>
                 <p class='post-info'><span class='posted-on'>2006-04-17 17:40</span></p>
                 <div class='post-content'><p>I don't usually look carefully at emails I get purporting to be from PayPal; I know they're frauds. But this one is fairly impressive.</p>
-<p>Here's the correct URL to PayPal's login screen<br>
+<p>Here's the correct URL to PayPal's login screen<br />
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_login-run">https://www.paypal.com/cgi-bin/webscr?cmd=\_login-ru</a></p>
-<p>Here's the text of the link that appears in the phishing email:<br>
+<p>Here's the text of the link that appears in the phishing email:<br />
 <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_login-run">https://www.paypal.com/us/cgi-bin/webscr?cmd=\_login-ru</a></p>
-<p>And, here's the actual URL for that link, which I could see by hovering over it, or by right-clicking and choosing Copy Link, then pasting into a text editor.<br>
+<p>And, here's the actual URL for that link, which I could see by hovering over it, or by right-clicking and choosing Copy Link, then pasting into a text editor.<br />
 <a href="http://www-paypal.org/us/cgi-bin/webscrcmd=_login+run/index.htm?logIN=upDate">http://www-paypal.org/us/cgi-bin/webscrcmd=\_login+run/index.htm?logIN=upDat</a></p>
 <p>Now, as expected, the link text is almost exactly like the actual PayPal URL. But what's unexpected is how close the <em>actual</em> URL is to the PayPal URL. A casual eye would say they're close enough to be legitimate.</p>
-<p>The phishing URL is different in these critical ways:<br>
+<p>The phishing URL is different in these critical ways:<br />
 1. The PayPal domain is ]www.paypal.com. The phishing domain is www-paypal.org. Someone went to the trouble of registering this.</p>
-<p>2. The PayPal path is /cgi-bin/. This is followed by a CGI command (or filename, not sure which), "webscr", and then the parameters and arguments for the command, cmd=_login-run</p>
-<p>3. However, the phishing path is us/cgi-bin/webscrcmd=_login+run/. Do you see how they make it look almost like the CGI command? This is followed by a standard web page, "index.htm", which is receiving a bogus parameter and argument "logIN=upDate".</p>
+<p>2. The PayPal path is /cgi-bin/. This is followed by a CGI command (or filename, not sure which), &quot;webscr&quot;, and then the parameters and arguments for the command, cmd=_login-run</p>
+<p>3. However, the phishing path is us/cgi-bin/webscrcmd=_login+run/. Do you see how they make it look almost like the CGI command? This is followed by a standard web page, &quot;index.htm&quot;, which is receiving a bogus parameter and argument &quot;logIN=upDate&quot;.</p>
 <p>4. I opened <em>just</em> the phishing index page. It looks almost exactly like the main PayPal page. The only difference is that, if you try to log in, you'll be passing your username and password to the thieves instead of PayPal.</p>
 </div>
               </div>
