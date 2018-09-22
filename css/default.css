@@ -1,5 +1,5 @@
 /* Stolen from MarkdownEdit editor */
-body { font-family: 'Courier New', monospace ;margin:0; padding:0; ;line-height: 1.4; font-size: 12pt;}
+body { font-family: 'Cutive-Mono', 'Courier New', monospace ;margin:0; padding:0; ;line-height: 1.4; font-size: 12pt;}
 code { white-space: pre }
 h1, h2, h3, h4, h5, h6 { font-family: 'Special Elite', serif; font-weight: normal;}
 h1 {font-size: 150%;}
