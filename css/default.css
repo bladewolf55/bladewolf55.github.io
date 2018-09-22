@@ -132,7 +132,7 @@ ol.tree {
 
 /* posts section */
 /* section#posts {margin: 0 50px 20px 250px;} */
-.post { border-top: solid 1px lightgray;}
+.post { border-top: solid 1px lightgray;padding: 0 10px 0 10px;background-color: whitesmoke;}
 .post-title { margin: 20px 15px 0 0; font-size: 150%; text-decoration: none;}
 .post-info {font-family: 'Special Elite', ; font-size: 80%; padding-top:0; margin-top: 0; color:darkslategray;}
 .post-content {margin-top: 20px;}
