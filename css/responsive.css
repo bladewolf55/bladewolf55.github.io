@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+.col-left {
+    width: 25%;
+    float: left;
+}
+.col-right {
+    width: 75%;
+    float: left;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+nav .icon {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .col-right {padding: 0 4% 0 4%;}
+
+    code { font-size: 80%; }
+
+    nav div {display: none;}
+    nav a.icon {
+      float: right;
+      display: block;
+      font-size: 200%;
+    }
+
+    nav.responsive {position: relative; background-color: black}
+    nav.responsive .icon {
+      position: absolute;
+      right: 4%;
+      top: 0;
+      color: white;
+    }
+  
+    nav.responsive div {
+        display:block;
+        color: white;
+    }
+
+    nav.responsive a, nav.responsive a:link, nav.responsive a:visited {
+        color: lightslategray;
+        text-decoration: none;
+        text-decoration-color: lightgray;
+    }
+}
+
